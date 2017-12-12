@@ -13,5 +13,6 @@ public class Login extends ReusableMethods
 		driver.findElement(By.xpath("//*[@id='test-info-wrapper']/span")).click();
 		driver.findElement(By.xpath("//*[@id='username']")).clear();
 		driver.findElement(By.xpath("//*[@id='username']")).sendKeys(cellRead(0,1,1));
+		System.out.println("chandana'd checin in Login page");
 	}
 }
