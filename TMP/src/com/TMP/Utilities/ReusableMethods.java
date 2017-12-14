@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
@@ -58,20 +60,18 @@ public class ReusableMethods
 	public void invokeApplication()
 	{
 		driver.get(Prop.getProperty("ApplicationURL"));
-		//driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS);
-		
+		driver.manage().timeouts().implicitlyWait(5000,TimeUnit.SECONDS);
 	}
 
 	//Method to read data from excel
 	public static String cellRead(int sheet,int row,int column) throws IOException, InterruptedException
 	{
-		Thread.sleep(5000);
-		file = new File("D:\\data.xlsx");
+		file = new File("C:\\Users\\549781\\Desktop\\Automation TMP\\TMP\\TestData.xlsx");
 		fis = new FileInputStream(file);
 		wb = new XSSFWorkbook(fis);
 		sh= wb.getSheetAt(sheet);
-		String data = sh.getRow(row).getCell(column).getStringCellValue();
+		DataFormatter formatter = new DataFormatter();
+		String data = formatter.formatCellValue(sh.getRow(row).getCell(column));
 		return data;
 	}
 
