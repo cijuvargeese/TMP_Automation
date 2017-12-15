@@ -17,6 +17,7 @@ public class L2_ReleaseApproval_Page extends com.TMP.Utilities.ReusableMethods {
 		driver.findElement(By.className("edit_cdp_table")).click(); 
 		driver.findElement(By.xpath("//*[@id='cdp-manager-content-main']/div/div/dashboard-main/div[2]/release-approvals/div[5]/edit-release/div[5]/div[3]/div[2]/select")).click();
 		driver.findElement(By.xpath("//*[@title='Medical leave']")).click();
+		System.out.println();
 	}
 
 }

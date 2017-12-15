@@ -56,7 +56,7 @@ public class ReusableMethods
 		}
 	}
 
-	//Method to invoke URL of application
+	//Method to invoke URL of applicationa
 	public void invokeApplication()
 	{
 		driver.get(Prop.getProperty("ApplicationURL"));
