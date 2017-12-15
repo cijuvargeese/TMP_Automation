@@ -64,9 +64,9 @@ public class ReusableMethods
 	}
 
 	//Method to read data from excel
-	public static String cellRead(int sheet,int row,int column) throws IOException, InterruptedException
+	public static String cellRead(int sheet,int row,int column ) throws IOException, InterruptedException
 	{
-		file = new File("C:\\Users\\549781\\Desktop\\Automation TMP\\TMP\\TestData.xlsx");
+		file = new File(Prop.getProperty("ExcelPath"));
 		fis = new FileInputStream(file);
 		wb = new XSSFWorkbook(fis);
 		sh= wb.getSheetAt(sheet);
